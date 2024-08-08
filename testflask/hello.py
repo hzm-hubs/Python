@@ -6,7 +6,10 @@ from markupsafe import escape
 app = Flask(__name__)
 
 # 首页
+print('path',__name__)
 
+# 文件启动
+# flask --app hello run
 
 @app.route('/')
 def homepage():
