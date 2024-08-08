@@ -1,3 +1,4 @@
+# 字典
 confirm_users={}
 while True:
     name=str(input("请输入需要充值的账号:"))

@@ -212,6 +212,4 @@ class namestestcase(unittest.TestCase):   #unittest测试函数
         fomatted_name=get_formatted_name('dso','fefe','polq')
         self.assertEqual(fomatted_name,'Dso Polq Fefe')
 unittest.main()  #让代码运行这个测试
-
-
 #测试未通过时应该怎么办 #在上式加入可判断的middle语句
