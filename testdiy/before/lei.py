@@ -54,6 +54,7 @@
 # jijk.sit()
 # jijk.roll_over()#可根据一个类创建任意数量的实例，前提是存储的变量不一样
 #类3
+
 class Car():
     def __init__(self,make,model,year):
         self.make=make
@@ -65,23 +66,28 @@ class Car():
         return long_name.title()#使long_name中的字符串都大写后返回
     def read_odometer(self):
         print("this car has "+str(self.odometer_reading)+" miles on it.")
-my_new_car=Car('Bwm','x7','2017')
-print(my_new_car.get_descriptive_name())
-my_new_car.read_odometer()
-my_new_car.odometer_reading=250 #直接修改属性的值（第一种修改属性的方法）
-my_new_car.read_odometer()
-#第二种修改属性值的方法
-    def update_odometer(self,mileage):
+    def update_odometer(self,mileage): # 第二种
         if mileage>=self.odometer_reading:
             self.odometer_reading=mileage  #此处进行了扩展，禁止将里程表里的数回拨
         else:
             print("you can't roll back an odometer!")
-    my_new_car.update_odometer(23)
-    my_new_car.read_odometer()  #这种方法是在类里加入了一个更新函数update_odometer()
-#第三种修改属性的方法
-    def increment_odometer(self,miles):
+    def increment_odometer(self,miles): # 第三种
         self.odometer_reading+=miles
-    my_uesd_car=Car('subaru','outback',2013)
-    print(my_uesd_car.get_descriptive_name())
-    my_uesd_car.increment_odometer(100)#给属性传递特定的量
-    my_uesd_car.read_odometer()
+
+my_new_car=Car('Bwm','x7','2017')
+print(my_new_car.get_descriptive_name())
+my_new_car.read_odometer()
+
+#直接修改属性的值（第一种修改属性的方法）
+my_new_car.odometer_reading=250 
+my_new_car.read_odometer()
+
+#第二种修改属性值的方法
+my_new_car.update_odometer(23)
+my_new_car.read_odometer()  #这种方法是在类里加入了一个更新函数update_odometer()
+
+#第三种修改属性的方法
+my_uesd_car=Car('subaru','outback',2013)
+print(my_uesd_car.get_descriptive_name())
+my_uesd_car.increment_odometer(100)#给属性传递特定的量
+my_uesd_car.read_odometer()
